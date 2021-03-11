@@ -5,6 +5,7 @@ const bodyparser = require('body-parser')
 const User = require('../models/users')
 const checkLogin = require('../auth/auth')
 const sendEmail = require('../email/email')
+const auth = require('../auth/auth')
 const {passwordHash, userCredentials } = require('../auth/authprac')
 // const urlEncode = bodyparser.urlencoded({ extended: false })
 
@@ -14,8 +15,14 @@ if (typeof localStorage === "undefined" || localStorage === null) {
   }
 
 
-router.get('/', (req, res)=>{
-    res.render('index')
+router.get('/', auth, (req, res)=>{
+    if(req.error){
+        res.render('index')
+    }
+    else{
+        res.redirect('/memberpage')
+    }
+    
 })
 
 //Create user
