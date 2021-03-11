@@ -11,19 +11,25 @@
 </head>
 <body>
     
-    <div class="createTask">
-
-        <h1>Create Task</h1>
-        <p class="headerLink"><a href="/">Home</a></p>
-        <form method="POST" action="" onsubmit="return onFormSubmit(event)">
-            <input type="text" name="description"  id="desc" placeholder="Description">
-            <select name="completed">
-                <option>Completed</option>
-                <option>Incompleted</option>
-            </select>
-            <input type="submit" value="Create Task" id='submit_form'>
-        </form>
-        <p class="message"></p>
+        <div class="createTask">
+            
+                <h1>Create Task</h1>
+                <p class="headerLink"><a href="/">Home</a></p>
+                <div class="formHolder">
+                    <form method="POST" action="" onsubmit="return onFormSubmit(event)">
+                    <input type="text" name="description"  id="desc" placeholder="Description">
+                    <div class="custDrop">
+                        <select name="completed">
+                        <option>Completed</option>
+                        <option>Incompleted</option>
+                        </select>
+                        <span class="custome_arrow"><i class="arrow down"></i></span>
+                    </div>
+                    <input type="submit" value="Create Task" id='submit_form'>
+                    </form>
+                    <p class="message"></p>
+                 </div>
+        
         </div>
 </body>
 </html>

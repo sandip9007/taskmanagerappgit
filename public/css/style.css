@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     text-decoration: none;
     list-style: none;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 body {
-    /* background-color: aqua; */
+    background-color: #c5e3e3;
     text-align: center;
 }
 .container{
@@ -26,7 +29,7 @@ body {
 }
 
 tbody tr:hover {
-    background: #dbdbd9;
+    background: #c2c2c2;
 }
 .dataTable{
     width: 100%;
@@ -47,6 +50,7 @@ tbody tr:hover {
     background: #3dd944;
     outline: none;
     border: none;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 /* .message{
@@ -70,6 +74,13 @@ tbody tr:hover {
     
 }
 
+.formHolder{
+    width: 700px;
+    height: 55px;
+    background: white;
+    box-sizing: border-box;
+}
+
 .createTask{
     width: 600px;
     height: 300px;
@@ -79,20 +90,67 @@ tbody tr:hover {
     box-sizing: border-box;
 }
 
-.createTask input[type="text"] {
-    width :  300px;
-    height: 25px; 
+.createTask select {
+    width :  150px;
+    height:   45px; 
     padding: 5px;
     margin: 5px;
     box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    
+}
+
+.createTask input[type="text"] {
+    width :  350px;
+    height:   45px; 
+    padding: 5px;
+    margin: 5px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-size: 20px;
 }
 
 .createTask input[type="submit"] {
     width :  150px;
-    height: 25px; 
+    height:  55px; 
     padding: 5px;
-    margin: 5px;
     background: #3dd944;
     outline: none;
     border: none;
+    float: right;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 15px;
+    color: white;
 }
+
+.custDrop{
+    display: inline-block;
+    position: relative;
+}
+
+
+.custome_arrow{
+    background: white;
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    pointer-events: none;
+}
+.arrow {
+    border: solid #c2c2c2;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 4px;
+    position: absolute;
+    top: 40%;
+  }
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }

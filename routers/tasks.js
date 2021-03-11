@@ -14,7 +14,9 @@ taskrouter.post('/memberpage', auth, (req, res)=>{
     })
     // res.send(req.body)
     task.save().then((task)=>{
-        res.render('tasks')
+        res.render('tasks', {
+            tasks : task
+        })
     }).catch((error)=>{
         res.send(error)
     })

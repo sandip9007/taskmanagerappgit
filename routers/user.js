@@ -23,7 +23,7 @@ router.post('/adduser', passwordHash, (req, res)=>{
     const user = new User(req.body)
     user.save().then((user)=>{
         sendEmail(req.body.email)
-        res.send(user)
+        res.send(req.body.email)
     }).catch((err)=>{
         console.log(err)
     })

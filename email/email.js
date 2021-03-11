@@ -15,7 +15,8 @@ const sendEmail = (email)=>{
         to: email, // Change to your recipient
         from: 'sandipghoshal87@gmail.com', // Change to your verified sender
         subject: 'Sending with SendGrid is Fun',
-        html: '<strong>Thank you for signing up</strong>',
+        text: `Thank you for signing up`,
+        html: '<strong>and easy to do anywhere, even with Node.js</strong>',
     })
 }
 
