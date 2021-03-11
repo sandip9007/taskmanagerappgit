@@ -12,15 +12,15 @@
    
     <div class="container">
     <h1>Sign up</h1>
-
+    <p><a href="/login">Sign in</a></p>    
     <form method="POST" action="/adduser" onsubmit="return onFormSubmit(event)">
-        <input type="text" name="name"  id="name" placeholder="Fulname"><br>
-        <input type="text" name="email" id="email" placeholder="Email"><br>
-        <input type="password" name="password" id="email" placeholder="Password"><br>
+        <input type="text" name="name"  id="name" placeholder="Fulname" required><br>
+        <input type="email" name="email" id="email" placeholder="Email" required><br>
+        <input type="password" name="password" id="email" placeholder="Password" required><br>
         <label>Male</label>
-        <input type="radio" name="gender" value="Male">
+        <input type="radio" name="gender" value="Male" checked>
         <label>Female</label>
-        <input type="radio" name="gender" value="Female">
+        <input type="radio" name="gender" value="Female" >
         <br>
         <input type="submit" value="Register" id='submit_form'>
     </form>

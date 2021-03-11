@@ -9,6 +9,7 @@ const passport = require('passport')
 // passportConfig(Passport)
 
 const userRoute = require('./routers/user')
+const taskrouter = require('./routers/tasks')
 const urlEncode = bodyParser.urlencoded({ extended : true })
 const connectDB = require('./db/db')
 const multer = require('multer')
@@ -33,7 +34,7 @@ app.use(urlEncode)
 
 //Load routers
 app.use(userRoute)
-
+app.use(taskrouter)
 connectDB()
 
 app.listen(port, ()=>{

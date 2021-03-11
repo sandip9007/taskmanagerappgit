@@ -4,6 +4,7 @@ const router = new express.Router()
 const bodyparser = require('body-parser')
 const User = require('../models/users')
 const checkLogin = require('../auth/auth')
+const sendEmail = require('../email/email')
 const {passwordHash, userCredentials } = require('../auth/authprac')
 // const urlEncode = bodyparser.urlencoded({ extended: false })
 
@@ -21,6 +22,7 @@ router.get('/', (req, res)=>{
 router.post('/adduser', passwordHash, (req, res)=>{
     const user = new User(req.body)
     user.save().then((user)=>{
+        sendEmail(req.body.email)
         res.send(user)
     }).catch((err)=>{
         console.log(err)
@@ -40,7 +42,8 @@ router.post('/login', async(req, res)=>{
         const token = await user.generateAuth()
         // res.send({ user : user.getPublicDetail(),token  })
         localStorage.setItem('myToken', token);
-        res.send({user, token})
+        // res.send({user, token})
+        res.redirect('memberpage')
         
     } catch (error) {
         res.status(400).send( "Error" + error )

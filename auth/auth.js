@@ -8,10 +8,7 @@ const checkLogin = async (req, res, next)=>{
         req.user = user
       
     } catch (error) {
-        // return new Error("You must login to access this page")
         req.error = "You must login to access this page"
-        // res.send("You must login to access this page")
-        
     }
     next()
 }
