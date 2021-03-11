@@ -36,10 +36,16 @@ router.post('/adduser', passwordHash, (req, res)=>{
     })
 })
 //Login user
-router.get('/login', (req, res)=>{
-    res.render('login', {
-        message : ""
-    })
+router.get('/login', auth, (req, res)=>{
+
+    if(req.error){
+        res.render('index')
+    }
+    else{
+        res.redirect('/memberpage')
+    }
+
+    
 })
 
 router.post('/login', async(req, res)=>{
