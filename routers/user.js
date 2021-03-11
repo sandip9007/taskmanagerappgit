@@ -39,7 +39,7 @@ router.post('/adduser', passwordHash, (req, res)=>{
 router.get('/login', auth, (req, res)=>{
 
     if(req.error){
-        res.render('index')
+        res.render('login')
     }
     else{
         res.redirect('/memberpage')
